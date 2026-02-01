@@ -1,4 +1,5 @@
 #ifndef CONFIG_H
+
 #define CONFIG_H
 
 // String used to delimit block outputs in the status.
@@ -17,16 +18,11 @@
 #define TRAILING_DELIMITER 0
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
-#define BLOCKS(X)             \
-    X("", "sb-mail", 600, 1)  \
-    X("", "sb-music", 0, 2)   \
-    X("", "sb-disk", 1800, 3) \
-    X("", "sb-memory", 10, 4) \
-    X("", "sb-loadavg", 5, 5) \
-    X("", "sb-mic", 0, 6)     \
-    X("", "sb-record", 0, 7)  \
-    X("", "sb-volume", 0, 8)  \
-    X("", "sb-battery", 5, 9) \
-    X("", "sb-date", 1, 10)
+#define BLOCKS(X) \
+X("", "$HOME/.local/bin/sb-updates", 900, 1) \
+X("", "$HOME/.local/bin/sb-forecast", 900, 2) \
+X("", "$HOME/.local/bin/sb-volume", 0, 3) \
+X("", "$HOME/.local/bin/sb-clock", 1, 4) \
+X("", "echo '   '", 0, 0) \
 
 #endif  // CONFIG_H
